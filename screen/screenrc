@@ -1,0 +1,31 @@
+deflogin on
+
+vbell off
+
+##remove some stupid / dangerous key bindings
+#bind ^x
+#bind x
+#bind ^k
+#bind L
+#bind ^\
+##make them better
+#bind \\ quit
+#bind K kill
+#bind I login on
+#bind O login off
+#bind } history
+#bind X lockscreen
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+defscrollback 1000
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+                                                                                                                                                                                                
+termcapinfo xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'                                                                                                                               
+term xterm-256color

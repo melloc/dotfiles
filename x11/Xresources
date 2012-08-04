@@ -1,0 +1,22 @@
+XTerm*background:  #3F3F3F
+XTerm*foreground:  #DCDCCC
+XTerm*color0:      #3F3F3F
+XTerm*color1:      #705050
+XTerm*color2:      #60B48A
+XTerm*color3:      #DFAF8F
+XTerm*color4:      #506070
+XTerm*color5:      #DC8CC3
+XTerm*color6:      #8CD0D3
+XTerm*color7:      #DCDCCC
+XTerm*color8:      #709080
+XTerm*color9:      #DCA3A3
+XTerm*color10:     #C3BF9F
+XTerm*color11:     #F0DFAF
+XTerm*color12:     #94BFF3
+XTerm*color13:     #EC93D3
+XTerm*color14:     #93E0E3
+XTerm*color15:     #FFFFFF
+
+XTerm*faceName: Bitstream Vera Serif Mono
+
+XTerm*faceSize: 9

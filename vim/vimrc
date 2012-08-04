@@ -1,0 +1,27 @@
+if has("autocmd")
+    filetype on
+    filetype indent on
+    filetype plugin on
+endif
+
+syntax on
+
+set expandtab
+set tabstop=4
+
+set ofu=syntaxcomplete#Complete
+
+" Set my mappings. Especially the capital W.
+inoremap jj <Esc>
+command W w
+command Wq wq
+
+if exists("&foldenable")
+    set foldenable
+endif
+
+" colorscheme zenburn
+
+let g:haddock_browser="/usr/bin/chromium"
+let g:haddock_browser_callformat="%s file://%s >/dev/null 2>&1 &"
+

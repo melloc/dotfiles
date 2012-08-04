@@ -1,0 +1,29 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1500
+SAVEHIST=1500
+setopt appendhistory autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle :compinstall filename '/home/argentpyro//.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+alias ls="ls --color"
+alias brown='sudo wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf'
+alias nyan="nc -v miku.acm.uiuc.edu 23"
+
+# prompt
+autoload -U promptinit
+promptinit
+prompt gentoo
+
+export EDITOR="vim"
