@@ -24,6 +24,15 @@ alias nyan="nc -v miku.acm.uiuc.edu 23"
 # prompt
 autoload -U promptinit
 promptinit
-prompt gentoo
+
+case "`hostname -s`" in
+    atlas)
+        prompt gentoo
+    ;;
+
+    *)
+        prompt adam1
+    ;;
+esac
 
 export EDITOR="vim"
