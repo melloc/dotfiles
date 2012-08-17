@@ -1,8 +1,8 @@
-set from=cody@vaporpunk.com
-set hostname="vaporpunk.com"
+set from=cody@techhouse.org
+set hostname="techhouse.org"
 set imap_user="cody"
-set folder="imaps://imap.vaporpunk.com/"
+set folder="imaps://imap.techhouse.org/"
 set postponed="=Drafts"
-set spoolfile="imaps://imap.vaporpunk.com/INBOX"
-set signature="~/.mutt/signature.vaporpunk"
-set smtp_url="smtps://smtp.vaporpunk.com:10025/"
+set spoolfile="imaps://imap.techhouse.org/INBOX"
+set signature="~/.mutt/signature.th"
+set smtp_url="smtps://smtp.techhouse.org:587/"
