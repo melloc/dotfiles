@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 linkOrWarn() {
         if [[ -e "$2" && ! -L "$2" ]]; then
