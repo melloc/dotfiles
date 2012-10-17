@@ -9,6 +9,11 @@
 # tag files
 tags
 
+# project files
+.classpath
+.project
+
 # misc
+*.db
 *.pdf
 todo
