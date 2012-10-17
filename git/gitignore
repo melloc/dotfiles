@@ -1,4 +1,6 @@
 # object files
+bin/
+build/
 *.o
 *.out
 
