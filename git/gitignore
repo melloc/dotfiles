@@ -1,0 +1,14 @@
+# object files
+*.o
+*.out
+
+# backup
+.*.swp
+*~
+
+# tag files
+tags
+
+# misc
+*.pdf
+todo
