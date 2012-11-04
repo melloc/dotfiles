@@ -7,6 +7,8 @@ build/
 # backup
 .*.swp
 *~
+*.bak
+*.backup
 
 # tag files
 tags
