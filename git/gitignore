@@ -5,7 +5,7 @@ build/
 *.out
 
 # backup
-.*.swp
+*.swp
 *~
 *.bak
 *.backup
@@ -20,4 +20,5 @@ tags
 # misc
 *.db
 *.pdf
+sb
 todo
