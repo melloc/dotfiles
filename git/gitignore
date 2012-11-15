@@ -1,6 +1,7 @@
 # object files
 bin/
 build/
+*.class
 *.o
 *.out
 
