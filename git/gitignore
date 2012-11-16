@@ -2,6 +2,7 @@
 bin/
 build/
 *.class
+*.jar
 *.o
 *.out
 
