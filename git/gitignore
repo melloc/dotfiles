@@ -12,6 +12,9 @@ build/
 *.bak
 *.backup
 
+# library
+node_modules
+
 # tag files
 tags
 
