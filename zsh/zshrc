@@ -31,7 +31,7 @@ case "`hostname -s`" in
     ;;
 
     *)
-        prompt adam1
+        #prompt adam1
     ;;
 esac
 
@@ -45,7 +45,7 @@ setopt prompt_subst
 export __CUR_G_BRANCH=
 parse_g_br() {
     git branch --no-color 2> /dev/null | \
-            sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+            sed -e '/^[^*]/d' -e 's/* \(.*\)/ : \1/'
 }
 precmd_functions+='precmd_update_g_vars'
 #TODO: Make this a git hook?
@@ -62,7 +62,7 @@ chpwd_update_g_vars() { export __CUR_G_BRANCH="$(parse_g_br)" }
 echo_g_br() { echo $__CUR_G_BRANCH }
 
 # ex: mcomella@annyeong:iu/daebak:master:$
-export PS1=$'%U%n%F{4}@%m%f%u:%2~:%F{4}$(echo_g_br)%f:$ '
+export PS1=$'%K{blue}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{yellow}$(parse_g_br)%f%F{white} %# %b%f%k'
 
 if [[ -f ~/.zshrc.local ]]; then
     . ~/.zshrc.local;
