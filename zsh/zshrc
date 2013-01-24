@@ -36,3 +36,8 @@ case "`hostname -s`" in
 esac
 
 export EDITOR="vim"
+
+if [[ -f ~/.zshrc.local ]]; then
+    . ~/.zshrc.local;
+fi;
+
