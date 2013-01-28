@@ -1,5 +1,5 @@
-XTerm*background:  #3F3F3F
-XTerm*foreground:  #DCDCCC
+*background:  #3F3F3F
+*foreground:  #DCDCCC
 XTerm*color0:      #3F3F3F
 XTerm*color1:      #705050
 XTerm*color2:      #60B48A
@@ -20,3 +20,7 @@ XTerm*color15:     #FFFFFF
 XTerm*faceName: Bitstream Vera Serif Mono
 
 XTerm*faceSize: 9
+
+
+XTerm.ptyInitialErase: false
+
