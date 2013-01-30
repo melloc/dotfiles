@@ -39,6 +39,7 @@ case "`hostname -s`" in
 esac
 
 export EDITOR="vim"
+export VISUAL="vim"
 #
 # Prompt
 # via http://www.jukie.net/~bart/blog/20071219221358
