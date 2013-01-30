@@ -20,13 +20,15 @@ setopt hist_ignore_space
 alias ls="ls --color"
 alias brown='sudo wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf'
 alias nyan="nc -v miku.acm.uiuc.edu 23"
+alias take-notes="vim notes-\`date +%a-%b-%d\`"
+alias sp="vim +set\ buftype=nofile +startinsert" ## A quick scratchpad from the shell
 
 # prompt
 autoload -U promptinit
 promptinit
 
-case "`hostname -s`" in
-    atlas)
+case "`hostname`" in
+    "atlas")
         prompt gentoo
         ;;
 
