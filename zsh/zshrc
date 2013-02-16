@@ -40,8 +40,9 @@ case "`hostname`" in
     ;;
 esac
 
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="vim -O"
+export VISUAL="vim -O"
+export LESS="-RX"
 #
 # Prompt
 # via http://www.jukie.net/~bart/blog/20071219221358
