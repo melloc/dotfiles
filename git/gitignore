@@ -6,6 +6,7 @@ build/
 *.o
 *.out
 *.pyc
+*.pyo
 
 # backup
 *.swp
