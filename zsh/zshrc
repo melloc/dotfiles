@@ -17,11 +17,14 @@ compinit
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+
+### My Aliases ###
 alias ls="ls --color"
 alias brown='sudo wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf'
-alias nyan="nc -v miku.acm.uiuc.edu 23"
-alias take-notes="vim notes-\`date +%a-%b-%d\`"
+alias nyan="nc -v miku.acm.uiuc.edu 23"          ## Fun little thing.
+alias take-notes="vim notes-\`date +%a-%b-%d\`"  ## Create a new file to write notes
 alias sp="vim +set\ buftype=nofile +startinsert" ## A quick scratchpad from the shell
+alias -g LAUNCH=" &> /dev/null &disown"          ## Allow me to launch a program without worrying about output.
 
 # prompt
 autoload -U promptinit
@@ -30,8 +33,7 @@ promptinit
 case "`hostname`" in
     "atlas")
         prompt gentoo
-        ;;
-
+    ;;
     *) if (( $(zsh --version | cut -d ' ' -f 2 | cut -d '.' -f 3) < 10 )); then
         prompt adam1
     else 
