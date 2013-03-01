@@ -26,6 +26,9 @@ alias take-notes="vim notes-\`date +%a-%b-%d\`"  ## Create a new file to write n
 alias sp="vim +set\ buftype=nofile +startinsert" ## A quick scratchpad from the shell
 alias -g LAUNCH=" &> /dev/null &disown"          ## Allow me to launch a program without worrying about output.
 
+# Personal keybindings
+bindkey -a "z" push-line
+
 # prompt
 autoload -U promptinit
 promptinit
@@ -42,11 +45,12 @@ case "`hostname`" in
     ;;
 esac
 
-export EDITOR="vim -O"
-export VISUAL="vim -O"
+# Environment variables
+export EDITOR="vim"
+export VISUAL="vim"
 export LESS="-RX"
-#
-# Prompt
+
+# More prompt
 # via http://www.jukie.net/~bart/blog/20071219221358
 typeset -ga precmd_functions
 typeset -ga chpwd_functions
@@ -77,8 +81,8 @@ chpwd_functions+='chpwd_update_g_vars'
 chpwd_update_g_vars() { export __CUR_G_BRANCH="$(parse_g_br)" }
 echo_g_br() { echo $__CUR_G_BRANCH }
 
-# ex: mcomella@annyeong:iu/daebak:master:$
 
+# Check if there are any local settings
 if [[ -f ~/.zshrc.local ]]; then
     . ~/.zshrc.local;
 fi;
