@@ -1,14 +1,13 @@
 import XMonad
-import XMonad.Actions.Volume
+-- import XMonad.Actions.Volume
 import XMonad.Util.Dzen
-import qualified XMonad.Hooks.DynamicLog as DL
+import XMonad.Hooks.DynamicLog
 import Data.Monoid
 import System.Exit
+import XMonad.Util.Run
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
-
-alert = dzenConfig return . show
 
 myTerminal = "xterm"
 
@@ -91,15 +90,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
 
-    -- Lower volume
-    , ((modm              , xK_minus  ), lowerVolume 2 >>= alert )
-
-    -- Raise volume
-    , ((modm              , xK_equal  ),  raiseVolume 2 >>= alert )
-
-    -- Mute volume
-    , ((modm .|. shiftMask, xK_m      ), toggleMute >> return ())
-
     ]
     ++
  
@@ -124,7 +114,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
  
 
-main = xmonad =<< DL.dzen defaultConfig {
+main = xmonad =<< xmobar defaultConfig {
         terminal    = myTerminal,
         workspaces  = myWorkspaces,
         keys        = myKeys

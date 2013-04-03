@@ -1,0 +1,16 @@
+Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+       , bgColor = "#073642"
+       , fgColor = "#93a1a1"
+       , position = Top
+       , lowerOnStart = True
+       , commands = [ Run Weather "KPVD" ["-t","<tempF>F: <skyCondition>","-L","40","-H","85","--normal","#859900","--high","#dc322f","--low","#2aa198"] 600
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Date "%a %b %_d %Y %l:%M:%S %p" "date" 10
+                    , Run Com "hostname" [] "" 0
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% } <fc=#b58900>%date%</fc> { %KPVD% | %cpu% | %memory% | %hostname%"
+       }

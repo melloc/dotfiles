@@ -12,3 +12,4 @@ if [[ ! -d "$xmdir" ]]; then
 fi;
 
 linkOrWarn xmonad/xmonad.hs $xmdir/xmonad.hs;
+linkOrWarn xmonad/xmobarrc ~/.xmobarrc;
