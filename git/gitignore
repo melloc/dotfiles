@@ -1,22 +1,21 @@
 # object files
 bin/
 build/
+*.[ao]
 *.class
 *.jar
-*.o
 *.out
-*.pyc
-*.pyo
+*.py[co]
 
 # backup
-*.swo
-*.swp
 *~
 *.bak
 *.backup
+*.sw[op]
 
-# library
-node_modules
+# lib
+node_modules/
+venv/
 
 # tag files
 tags
