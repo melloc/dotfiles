@@ -25,6 +25,9 @@ alias nyan="nc -v miku.acm.uiuc.edu 23"          ## Fun little thing.
 alias take-notes="vim notes-\`date +%a-%b-%d\`"  ## Create a new file to write notes
 alias sp="vim +set\ buftype=nofile +startinsert" ## A quick scratchpad from the shell
 alias -g LAUNCH=" &> /dev/null &disown"          ## Allow me to launch a program without worrying about output.
+if which node &> /dev/null && which rlwrap &> /dev/null; then 
+    alias node="env NODE_NO_READLINE=1 rlwrap node"; 
+fi;
 
 # Personal keybindings
 bindkey -a "z" push-line
