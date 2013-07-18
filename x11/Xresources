@@ -1,7 +1,7 @@
 *background:  #3F3F3F
 *foreground:  #DCDCCC
 XTerm*color0:      #3F3F3F
-XTerm*color1:      #705050
+XTerm*color1:      #7f5b5b
 XTerm*color2:      #60B48A
 XTerm*color3:      #DFAF8F
 XTerm*color4:      #506070
