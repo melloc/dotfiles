@@ -27,3 +27,6 @@ colorscheme desert
 let g:haddock_browser="/usr/bin/chromium"
 let g:haddock_browser_callformat="%s file://%s >/dev/null 2>&1 &"
 
+" show tabs as double angle brackets
+set list
+set listchars=tab:»\ 
