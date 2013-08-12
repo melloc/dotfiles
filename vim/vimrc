@@ -1,4 +1,18 @@
 if has("autocmd")
+    filetype off
+endif
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle manages vundle
+Bundle 'gmarik/vundle'
+
+" My bundles
+Bundle 'YankRing.vim'
+Bundle 'kana/vim-operator-user'
+
+if has("autocmd")
     filetype on
     filetype indent on
     filetype plugin on
@@ -29,4 +43,4 @@ let g:haddock_browser_callformat="%s file://%s >/dev/null 2>&1 &"
 
 " show tabs as double angle brackets
 set list
-set listchars=tab:Â»\ 
+set listchars=tab:»\ 
