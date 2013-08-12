@@ -1,0 +1,24 @@
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+
+[color]
+    ui = true
+
+[color "diff"]
+    new = green
+    old = red
+    whitespace = red reverse
+
+[github]
+    user = melloc
+
+[push]
+    default = current
+
+[merge]
+    tool = vimdiff
+
+[user]
+    name = Cody Peter Mello
+    email = cody@mellow.im
