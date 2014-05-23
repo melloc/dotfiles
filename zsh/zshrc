@@ -76,6 +76,6 @@ if [[ -f ~/.zshrc.local ]]; then
     . ~/.zshrc.local;
 fi;
 
-if which remind; then
+if which remind &> /dev/null; then
     remind ~/.reminders;
 fi;
