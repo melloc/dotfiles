@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1500
-SAVEHIST=1500
+HISTSIZE=10000000
+SAVEHIST=10000000
 setopt appendhistory autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -76,3 +76,6 @@ if [[ -f ~/.zshrc.local ]]; then
     . ~/.zshrc.local;
 fi;
 
+if which remind; then
+    remind ~/.reminders;
+fi;
