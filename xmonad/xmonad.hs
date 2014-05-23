@@ -1,13 +1,16 @@
 import XMonad
 -- import XMonad.Actions.Volume
-import XMonad.Util.Dzen
 import XMonad.Hooks.DynamicLog
 import Data.Monoid
 import System.Exit
 import XMonad.Util.Run
+import XMonad.Hooks.SetWMName
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
+import XMonad.Hooks.ManageDocks
+import XMonad.Layout.NoBorders
 
 myTerminal = "xterm"
 
@@ -112,11 +115,17 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
  
- 
+myLayout = tiled ||| Mirror tiled ||| Full
+  where
+    tiled   = Tall 1 (3/100) (3/5)  
 
 main = xmonad =<< xmobar defaultConfig {
         terminal    = myTerminal,
         workspaces  = myWorkspaces,
-        keys        = myKeys
+        keys        = myKeys,
+        startupHook = setWMName "LG3D",
+        layoutHook = lessBorders OnlyFloat $ avoidStruts $ myLayout
+                 , normalBorderColor  = "#000000" -- black
+                 , focusedBorderColor = "#ff3f3f" -- reddish
 }
 
