@@ -1,8 +1,8 @@
 set from=cody@techhouse.org
 set hostname="techhouse.org"
 set imap_user="cody"
-set folder="imaps://imap.techhouse.org/"
+set folder="imaps://techhouse.org/"
 set postponed="=Drafts"
-set spoolfile="imaps://imap.techhouse.org/INBOX"
+set spoolfile="imaps://techhouse.org/INBOX"
 set signature="~/.mutt/signature.th"
-set smtp_url="smtps://smtp.techhouse.org:587/"
+set smtp_url="smtps://techhouse.org:587/"
