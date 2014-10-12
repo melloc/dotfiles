@@ -10,6 +10,12 @@ Bundle 'gmarik/vundle'
 
 " My bundles
 Bundle 'kana/vim-operator-user'
+Bundle 'jimenezrick/vimerl'
+Bundle 'edkolev/erlang-motions.vim'
+Bundle 'fatih/vim-go'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'scrooloose/syntastic'
+Bundle 'the-lambda-church/merlin'
 
 if has("autocmd")
     filetype on
