@@ -2,26 +2,41 @@ if has("autocmd")
     filetype off
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
 
-" Vundle manages vundle
-Bundle 'gmarik/vundle'
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+  set rtp+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My bundles
-Bundle 'kana/vim-operator-user'
-Bundle 'jimenezrick/vimerl'
-Bundle 'edkolev/erlang-motions.vim'
-Bundle 'fatih/vim-go'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'scrooloose/syntastic'
-Bundle 'the-lambda-church/merlin'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'edkolev/erlang-motions.vim'
+NeoBundle 'jimenezrick/vimerl'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'the-lambda-church/merlin'
+NeoBundle 'amdt/vim-niji'
 
-if has("autocmd")
-    filetype on
-    filetype indent on
-    filetype plugin on
-endif
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 syntax on
 
@@ -41,7 +56,7 @@ if exists("&foldenable")
 endif
 
 " colorscheme zenburn
-colorscheme desert
+" colorscheme desert
 
 let g:haddock_browser="/usr/bin/chromium"
 let g:haddock_browser_callformat="%s file://%s >/dev/null 2>&1 &"
