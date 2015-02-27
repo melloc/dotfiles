@@ -43,7 +43,7 @@ case "`hostname`" in
     *) if (( $(zsh --version | cut -d ' ' -f 2 | cut -d '.' -f 3) < 10 )); then
         prompt adam1
     else 
-        export PS1=$'%K{blue}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{yellow}$(parse_branch)%f%F{white} %# %b%f%k'
+        export PS1=$'%K{blue}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{yellow}$(parse_branch)%f%F{white}%(0?.. %F{red}(%?%)%f) %# %b%f%k'
     fi
     ;;
 esac
