@@ -25,32 +25,28 @@ alias nyan="nc -v miku.acm.uiuc.edu 23"          ## Fun little thing.
 alias take-notes="vim notes-\`date +%a-%b-%d\`"  ## Create a new file to write notes
 alias sp="vim +set\ buftype=nofile +startinsert" ## A quick scratchpad from the shell
 alias -g LAUNCH=" &> /dev/null &disown"          ## Allow me to launch a program without worrying about output.
-if which node &> /dev/null && which rlwrap &> /dev/null; then 
-    alias node="env NODE_NO_READLINE=1 rlwrap node"; 
-fi;
 
 # Personal keybindings
 bindkey -a "z" push-line
 
-# prompt
-autoload -U promptinit
-promptinit
-
-case "`hostname`" in
-    "atlas")
-        prompt gentoo
-    ;;
-    *) if (( $(zsh --version | cut -d ' ' -f 2 | cut -d '.' -f 3) < 10 )); then
-        prompt adam1
-    else 
-        export PS1=$'%K{blue}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{yellow}$(parse_branch)%f%F{white}%(0?.. %F{red}(%?%)%f) %# %b%f%k'
-    fi
-    ;;
-esac
+# This PS1 was based initially on the "adam1" prompt. To use just that,
+# run:
+#
+#   % autoload -U promptinit
+#   % promptinit
+#   % prompt adam1
+#
+# Additions here include:
+#
+#   - Printing out the current Git or Mercurial branch when in a repo
+#   - Printing out the previous command's exit code when non-zero
+#
+export PS1=$'%K{blue}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{yellow}$(parse_branch)%f%F{white}%(0?.. %F{red}(%?%)%f) %# %b%f%k'
 
 # Environment variables
 export EDITOR="vim"
 export VISUAL="vim"
+export PAGER="less"
 export LESS="-RX"
 
 # More prompt
