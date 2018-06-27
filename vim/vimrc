@@ -38,11 +38,17 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+set ruler
+
 syntax on
 
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+set backspace=indent,eol
+
+autocmd BufNewFile,BufRead *.c,*.h set noet
 
 set ofu=syntaxcomplete#Complete
 

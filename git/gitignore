@@ -17,7 +17,6 @@ build/
 *.un~
 
 # lib
-node_modules/
 venv/
 
 # tag files
