@@ -12,7 +12,7 @@ build/
 .\#*
 *.bak
 *.backup
-*.s[a-w][a-z]
+.*.s[a-w][a-z]
 .netrwhist
 *.un~
 
