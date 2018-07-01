@@ -2,6 +2,9 @@
 #
 # See http://i3wm.org/docs/userguide.html for a complete reference
 
+exec_always --no-startup-id "setxkbmap -layout us -option ctrl:nocaps"
+exec_always nm-applet
+
 set $mod Mod1
 set $super Mod4
 
@@ -67,7 +70,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-# bindsym $mod+f fullscreen
+bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -198,9 +201,18 @@ bindsym $mod+m mode "mark_window"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        # To make the bar disappear by default:
+        # mode hide
+        # modifier $mod
         position top
         status_command i3status
         colors {
             background #073642
         }
 }
+
+
+# Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c0 set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c0 set Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -c0 set Master toggle
