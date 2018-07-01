@@ -5,38 +5,56 @@ endif
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
-if has('vim_starting')
+
+"dein Scripts-----------------------------
+if &compatible
   set nocompatible               " Be iMproved
-  set rtp+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath+=/home/cpm/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Let NeoBundle manage NeoBundle
 " Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+if dein#load_state('/home/cpm/.cache/dein')
+  call dein#begin('/home/cpm/.cache/dein')
 
-" My bundles
-NeoBundle 'kana/vim-operator-user'
-NeoBundle 'edkolev/erlang-motions.vim'
-NeoBundle 'jimenezrick/vimerl'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'the-lambda-church/merlin'
-NeoBundle 'amdt/vim-niji'
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/cpm/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-call neobundle#end()
+  " Add or remove your plugins here:
+  " call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets')
+
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
+
+  call dein#add('kana/vim-operator-user')
+  call dein#add('edkolev/erlang-motions.vim')
+  call dein#add('jimenezrick/vimerl')
+  call dein#add('sjl/gundo.vim')
+  call dein#add('derekwyatt/vim-scala')
+  call dein#add('majutsushi/tagbar')
+  "call dein#add('fatih/vim-go')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('the-lambda-church/merlin')
+  "call dein#add('amdt/vim-niji')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+" if dein#check_install()
+"   call dein#install()
+" endif
+
+"End dein Scripts-------------------------
 
 set ruler
 
