@@ -20,11 +20,9 @@ setopt hist_ignore_space
 
 ### My Aliases ###
 alias ls="ls --color"
-alias brown='sudo wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf'
 alias nyan="nc -v miku.acm.uiuc.edu 23"          ## Fun little thing.
 alias take-notes="vim notes-\`date +%a-%b-%d\`"  ## Create a new file to write notes
 alias sp="vim +set\ buftype=nofile +startinsert" ## A quick scratchpad from the shell
-alias -g LAUNCH=" &> /dev/null &disown"          ## Allow me to launch a program without worrying about output.
 
 # Personal keybindings
 bindkey -a "z" push-line
@@ -59,19 +57,11 @@ parse_g_br() {
     git branch --no-color 2> /dev/null | \
         sed -e '/^[^*]/d' -e 's/* \(.*\)/ : \1/'
 }
-parse_h_br() {
-    hg branch 2> /dev/null | sed -e 's/\(.*\)/ : \1/'
-}
 parse_branch() {
     parse_g_br 
-    parse_h_br
 }
 
 # Check if there are any local settings
 if [[ -f ~/.zshrc.local ]]; then
     . ~/.zshrc.local;
-fi;
-
-if which remind &> /dev/null; then
-    remind ~/.reminders;
 fi;
