@@ -1,3 +1,3 @@
-vim/vim/bundle
+/vim/vim/plugged
 .*.sw[oap]
 *.spl

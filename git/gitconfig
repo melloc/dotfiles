@@ -20,5 +20,8 @@
     tool = vimdiff
 
 [user]
-    name = Cody Peter Mello
-    email = melloc@writev.io
+    name = Ulyssa
+    email = git@ulyssa.dev
+
+[commit]
+    gpgsign = true

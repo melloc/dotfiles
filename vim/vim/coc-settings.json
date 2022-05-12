@@ -1,0 +1,27 @@
+{
+	"languageserver": {
+		"haskell": {
+			"command": "hie-wrapper",
+			"args": ["--lsp"],
+			"trace.server": "verbose",
+			"rootPatterns": [
+				"stack.yaml",
+				"cabal.config",
+				"package.yaml"
+			],
+			"filetypes": ["hs", "lhs", "haskell"],
+			"initializationOptions": {
+				"languageServerHaskell": {
+					"hlintOn": true,
+					"maxNumberOfProblems": 10,
+					"completionSnippetsOn": true
+				}
+			}
+		},
+		"rust": {
+			"command": "rust-analyzer",
+			"filetypes": ["rust"],
+			"rootPatterns": ["Cargo.toml"]
+		}
+	}
+}
