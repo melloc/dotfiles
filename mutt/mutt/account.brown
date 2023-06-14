@@ -1,8 +1,0 @@
-set from=cody_mello@brown.edu
-set hostname="brown.edu"
-set imap_user="cody_mello@brown.edu"
-set folder="imaps://imap.gmail.com/"
-set postponed="=Drafts"
-set spoolfile="imaps://imap.gmail.com/INBOX"
-#set signature="~/.mutt/signature.brown"
-set smtp_url="smtps://smtp.gmail.com/"

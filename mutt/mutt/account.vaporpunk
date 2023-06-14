@@ -1,8 +1,0 @@
-set from=cody@vaporpunk.com
-set hostname="vaporpunk.com"
-set imap_user="cody"
-set folder="imaps://imap.vaporpunk.com/"
-set postponed="=Drafts"
-set spoolfile="imaps://imap.vaporpunk.com/INBOX"
-set signature="~/.mutt/signature.vaporpunk"
-set smtp_url="smtps://smtp.vaporpunk.com:10025/"

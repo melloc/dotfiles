@@ -1,8 +1,0 @@
-set from=cody@cs.brown.edu
-set hostname="cs.brown.edu"
-set folder="imaps://imaps.cs.brown.edu/"
-set imap_user="cody"
-set postponed="=Drafts"
-set spoolfile="imaps://imaps.cs.brown.edu/INBOX"
-#set signature="~/.mutt/signature.browncs"
-set smtp_url="smtps://smtps.cs.brown.edu/"
