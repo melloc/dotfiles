@@ -2,6 +2,9 @@
     excludesfile = ~/.gitignore
     editor = vim
 
+[init]
+    defaultBranch = main
+
 [color]
     ui = true
 
@@ -25,3 +28,6 @@
 
 [commit]
     gpgsign = true
+
+[include]
+    path = ~/.gitconfig.local
