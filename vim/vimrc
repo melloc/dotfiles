@@ -13,6 +13,7 @@ endif
 " Directory for plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'kana/vim-operator-user'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
@@ -36,7 +37,11 @@ set shiftwidth=8
 
 set backspace=indent,eol
 
-autocmd BufNewFile,BufRead *.c,*.h,*.cats,*.json set noet
+" Don't expand tabs in C.
+autocmd BufNewFile,BufRead *.c,*.h,*.cats set noet
+
+" Inlay hints in Rust files don't play nicely with wrapping.
+autocmd BufNewFile,BufRead *.rs set nowrap
 
 set ofu=syntaxcomplete#Complete
 
@@ -44,6 +49,8 @@ set ofu=syntaxcomplete#Complete
 inoremap jj <Esc>
 command W w
 command Wq wq
+command Wqa wqa
+command Wa wa
 command Sh sh
 
 if exists("&foldenable")
@@ -51,7 +58,18 @@ if exists("&foldenable")
 endif
 
 " colorscheme zenburn
-colorscheme desert
+" colorscheme desert
+colorscheme PaperColor
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+
+set background=dark
 
 
 " show tabs as double angle brackets

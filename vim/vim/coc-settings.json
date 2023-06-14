@@ -17,11 +17,8 @@
 					"completionSnippetsOn": true
 				}
 			}
-		},
-		"rust": {
-			"command": "rust-analyzer",
-			"filetypes": ["rust"],
-			"rootPatterns": ["Cargo.toml"]
 		}
-	}
+	},
+	"rust-analyzer.inlayHints.parameterHints.enable": false,
+	"rust-analyzer.inlayHints.typeHints.enable": false
 }
